@@ -1,0 +1,66 @@
+@import "~typeface-roboto/index.css";
+@import "~vue-material/dist/vue-material.min.css";
+@import "~vue-material/dist/theme/default.css";
+@import "~material-icons-font/material-icons-font.css";
+@import "~vue-material-modal-dialog/dist/components.css";
+@import "~@undecaf/vue-material-vuelidate/dist/components.css";
+
+
+[v-cloak] {
+    display: none;
+}
+
+body, .md-app {
+    height: 100%;
+}
+
+
+/*
+ * Additional flex classes, inspired by AngularJS Material
+ */
+
+/* Will grow and shrink as needed. Starts with a size of 0%. Same as md-size-0 */
+.md-layout-item.md-flex {
+    flex: 1 1 0%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Will grow and shrink as needed. Starts with a size based on its width and height values. */
+.md-layout-item.md-flex-auto {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+}
+
+/* Will not grow or shrink. Sized based on its width and height values. */
+.md-layout-item.md-flex-none {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+/* Will grow and shrink as needed. Starts with a size of 100%. Same as md-size-100. */
+.md-layout-item.md-flex-grow {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+}
+
+/* Will shrink as needed. Starts with a size based on its width and height values. */
+.md-layout-item.md-flex-nogrow,
+.md-layout-item.md-flex-initial {
+    flex: 0 1 auto;
+    box-sizing: border-box;
+}
+
+/* Will grow as needed, but won't shrink. Starts with a size based on its width and height values. */
+.md-layout-item.md-flex-noshrink {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+}
+
+
+/* Truncates text as needed and adds an ellipsis */
+.truncate, .truncate * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

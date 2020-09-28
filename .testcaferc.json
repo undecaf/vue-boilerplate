@@ -1,0 +1,9 @@
+{
+  "src": "tests/e2e/**/*.test.js",
+  "browsers": [ "chrome" ],
+  "speed": 1,
+  "screenshots": {
+    "path": "screenshots/",
+    "takeOnFails": false
+  }
+}
