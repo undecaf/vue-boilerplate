@@ -64,9 +64,13 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
   |    ├── css
   |    ├── fonts
   |    ├── js
+  |    ├── favicon.png
   |    └── index.html
   ├── node_modules         // dependencies
   |    └── ...
+  ├── public               // template files for HtmlWebpackPlugin
+  |    ├── favicon.png
+  |    └── index.html
   ├── src
   |    ├── components      // Vue components
   |    |    └── *.vue
@@ -85,6 +89,7 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
   |         └── *.spec.js
   ├── .eslintrc.js         // ESLint configuration
   ├── .gitignore 
+  ├── .jshintrc            // JSHint configuration 
   ├── .testcaferc.json     // Testcafé end-to-end test configuration
   ├── karma.conf.js        // Karma unit test configuration
   ├── LICENSE
@@ -120,6 +125,11 @@ Validations rely on [Vuelidate](https://vuelidate.js.org/). A wrapper component,
 [`<md-vuelidated>`](https://www.npmjs.com/package/vue-material-vuelidate),
 has been included to simplify writing Vuelidate validations.
 
+
+#### Providing I18N and L10N
+
+Define localized text in `src/messages.json` and refer to it in your components as
+described in the [Vue18N Guide](https://kazupon.github.io/vue-i18n/guide/formatting.html).
 
 
 #### Building and serving a project
