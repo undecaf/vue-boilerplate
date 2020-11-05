@@ -30,6 +30,7 @@
     "test:e2e": "testcafe"
   },
   "dependencies": {
+    "@felixpy/logger": "^0.2.0",
     "@undecaf/vue-autofocus": "^0.4.2",
     "@undecaf/vue-hotkey": "^0.1.4",
     "@undecaf/vue-material-locales": "^0.2.0",
@@ -42,7 +43,7 @@
     "vue": "^2.6.11",
     "vue-i18n": "^8.21.0",
     "vue-material": "^1.0.0-beta-15",
-    "vue-material-modal-dialog": "^0.1.6",
+    "vue-material-modal-dialog": "^0.2.2",
     "vue-router": "^3.3.4",
     "vuelidate": "^0.7.5",
     "vuex": "^3.5.1"
