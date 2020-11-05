@@ -14,6 +14,10 @@ describe('<app>', () => {
         wrapper = mount(App, config)
     })
 
+    it('provides a logger', () => {
+        expect(Vue.$logger.log).to.be.a('function')
+        expect(Vue.prototype.$logger.log).to.be.a('function')
+    })
 
     it('renders the title', () => {
         const toolbar = wrapper.get('.md-toolbar')
