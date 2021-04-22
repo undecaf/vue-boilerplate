@@ -1,4 +1,4 @@
-# Opinionated boilerplate for Vue.js projects
+# Opinionated boilerplate for Vue.js web apps and Electron apps
 
 ## Runtime environment
 
@@ -25,15 +25,16 @@
 ## Tooling
 
 +   [Vue CLI](https://cli.vuejs.org/) with
-    [router plugin](https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-router#vuecli-plugin-router),
-    [test-utils plugin](https://vue-test-utils.vuejs.org/)
-    and [Webpack](https://webpack.js.org/)
+    +   [Electron Builder plugin](https://nklayman.github.io/vue-cli-plugin-electron-builder/)
+    +   [router plugin](https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-router#vuecli-plugin-router)
+    +   [test-utils plugin](https://vue-test-utils.vuejs.org/)
+    +   and [Webpack](https://webpack.js.org/)
 +   [Karma](https://karma-runner.github.io/latest/index.html),
     [Mocha](https://mochajs.org/) and
     [Chai](https://www.chaijs.com/) for unit testing with headless Chrome 
     and Firefox (or any other browser for which there is a Karma launcher)
     
-    We do not favour using [Jest](https://jestjs.io/) 
+    Please note: we do not favour using [Jest](https://jestjs.io/) 
     as [recommended by Vue](https://vue-test-utils.vuejs.org/installation/#using-vue-test-utils-with-jest-recommended)
     because Jest uses [JSDOM](https://github.com/jsdom/jsdom#--------jsdom) as a browser surrogate.
     Although JSDOM performs better than a browser, it suffers from unpleasant 
@@ -41,8 +42,6 @@
     
 +   [TestCafé](https://devexpress.github.io/testcafe/) for end-to-end testing on Chrome and Firefox
 +   [serve](https://github.com/vercel/serve#readme) for serving the deployment build of the application locally
-+   [npm-check-updates](https://github.com/raineorshine/npm-check-updates#npm-check-updates---):
-    upgrades `package.json` dependencies to the latest versions, ignoring specified versions
 
 
 ## Workflow
@@ -60,15 +59,20 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
 <project directory>
   ├── .run                 // Webstorm run configurations for npm scripts
   |    └── *.run.xml
-  ├── dist                 // production build of app, built by 'npm build'
+  ├── build                // desktop app resources
+  |    └── icons
+  |         └── icon.png   // launcher and tray icon, at least 256x256 pixels
+  ├── dist                 // production build of web app, built by 'npm build'
   |    ├── css
   |    ├── fonts
   |    ├── js
   |    ├── favicon.png
   |    └── index.html
+  ├── dist_electron        // Electron builds of desktop app, built by 'npm electron:build'
+  |    └── ...
   ├── node_modules         // dependencies
   |    └── ...
-  ├── public               // template files for HtmlWebpackPlugin
+  ├── public               // template files for web apps (HtmlWebpackPlugin)
   |    ├── favicon.png
   |    └── index.html
   ├── src
@@ -77,6 +81,7 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
   |    ├── models          // Vuex data store and data model classes
   |    |    ├── store.js
   |    |    └── *.js
+  |    ├── background.js   // app configuration, also used for testing
   |    ├── config.js       // app configuration, also used for testing
   |    ├── main.css        // global styles
   |    ├── main.js         // app entry point
@@ -110,7 +115,7 @@ Save your components in directory `src/components`.
 #### Defining routes
 
 [Vue Router](https://router.vuejs.org/) is used for navigation.
-Add your routes to the array in `src/routes.js`.
+Define components for each state and add the routes to the array in `src/routes.js`.
 
 
 #### Using the Vuex store
@@ -132,7 +137,7 @@ Define localized text in `src/messages.json` and refer to it in your components 
 described in the [Vue18N Guide](https://kazupon.github.io/vue-i18n/guide/formatting.html).
 
 
-#### Building and serving a project
+#### Building and serving a web application
 
 The development server rebuilds the project whenever something in directory `src`
 has been changed.
@@ -147,6 +152,18 @@ Listening at a different port:
 
 ```shell script
 npm run serve -- --port 12345
+```
+
+
+#### Building and running a desktop application
+
+The development server rebuilds the project whenever something in directory `src`
+has been changed.
+
+Starting the server and running the desktop app:
+
+```shell script
+npm run electron:serve  # in Webstorm: run 'electron:serve' 
 ```
 
 
@@ -188,20 +205,21 @@ npm run test:e2e  # in Webstorm: run 'test:e2e'
 
 ### Production
 
-#### Building
+#### Building a web application for deployment
 
-Production builds are optimized for deployment but build less quickly.
+Web builds are optimized for deployment on a web server but build less quickly.
 
-This builds the project in directory `dist`:
+This builds the project as a web application in directory `dist`:
 
 ```shell script
 npm run build  # in Webstorm: run 'build' 
 ```
 
 
-#### Serving a production build locally
+#### Serving a deployable web application locally
 
-Making the server listen at the default port (8080):
+Making the local web server listen at the default port (8080) and serve
+the content of directory `dist`:
 
 ```shell script
 npm run serve:dist  # in Webstorm: run 'serve:dist' 
@@ -211,6 +229,19 @@ Listening at a different port:
 
 ```shell script
 npm run serve:dist -- -l 12345
+```
+
+
+#### Building a desktop application
+
+The project can be built as an Electron-based desktop application can be built
+for the current platform (Linux, Windows or macOS).
+
+This builds the project as a desktop application for the current platform
+in directory `dist_electron`:
+
+```shell script
+npm run electron:build  # in Webstorm: run 'electron:build' 
 ```
 
 

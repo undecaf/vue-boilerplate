@@ -4,6 +4,8 @@
 // Whether or not to include the Vue runtime compiler
 const runtimeCompiler = false
 
+const pkg = require('./package.json')
+
 
 const common = {
     publicPath: './',
@@ -20,6 +22,25 @@ const common = {
 
     productionSourceMap: false,
     runtimeCompiler,
+
+    pluginOptions: {
+        electronBuilder: {
+            builderOptions: {
+                appId: `at.rennweg.htl.${pkg.name}`,
+                linux: {
+                    category: 'Educational',
+                    target: [ 'AppImage', ],
+                },
+                win: {
+                    target: [ 'msi', ]
+                },
+                mac: {
+                    category: 'public.app-category.education',
+                    target: [ 'dmg', ]
+                },
+            },
+        },
+    },
 }
 
 const configs = {

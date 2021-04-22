@@ -1,4 +1,11 @@
 {
+  "asi": true,
+  "browser": true,
+  "devel": true,
   "esversion": 9,
-  "asi": true
+  "jasmine": true,
+  "mocha": true,
+  "module": true,
+  "node": true,
+  "strict": "implied"
 }

@@ -1,34 +1,25 @@
 {
-  "name": "@undecaf/vuejs-boilerplate",
+  "name": "vuejs-boilerplate",
   "version": "0.2.0",
   "description": "Opinionated boilerplate for Vue.js projects",
-  "keywords": [
-    "vue",
-    "template",
-    "material",
-    "vuelidate",
-    "vuex",
-    "router",
-    "axios"
-  ],
   "author": "F. Kasper <fkasper@modus-operandi.at>",
-  "license": "MIT",
-  "main": "main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/undecaf/vue-boilerplate"
-  },
+  "private": true,
   "scripts": {
-    "prebuild": "rimraf dist/",
-    "build": "vue-cli-service build",
     "serve": "vue-cli-service serve",
-    "serve:dist": "serve -l 8080 ./dist",
-    "lint": "eslint '{src,tests}/**/*.{js,vue}'",
-    "lint:fix": "npm run lint -- --fix",
+    "build": "vue-cli-service build",
     "test:unit": "karma start",
-    "test:unit:debug": "karma start --browsers Chrome --no-single-run",
-    "test:e2e": "testcafe"
+    "test:e2e": "testcafe",
+    "lint": "eslint '{src,tests}/**/*.{js,vue}'",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "lint:fix": "npm run lint -- --fix",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "prebuild": "rimraf dist/",
+    "serve:dist": "serve -l 8080 ./dist",
+    "test:unit:debug": "karma start --browsers Chrome --no-single-run"
   },
+  "main": "background.js",
   "dependencies": {
     "@felixpy/logger": "^0.2.0",
     "@undecaf/vue-autofocus": "^0.4.3",
@@ -55,6 +46,8 @@
     "@vue/test-utils": "^1.1.4",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
+    "electron": "^11.0.0",
+    "electron-devtools-installer": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
@@ -72,6 +65,22 @@
     "serve": "^11.3.2",
     "source-map-loader": "^1.0.2",
     "testcafe": "^1.14.0",
+    "vue-cli-plugin-electron-builder": "~2.0.0-rc.6",
     "vue-template-compiler": "^2.6.12"
+  },
+  "keywords": [
+    "vue",
+    "template",
+    "material",
+    "vuelidate",
+    "vuex",
+    "router",
+    "axios",
+    "electron"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/undecaf/vue-boilerplate"
   }
 }

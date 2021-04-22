@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # Secrets
 secrets*.*
+
+#Electron-builder output
+/dist_electron
