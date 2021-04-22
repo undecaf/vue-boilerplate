@@ -52,7 +52,14 @@ module.exports = function(config) {
         autoWatch: false,
 
         // Launch these browsers (https://npmjs.org/browse/keyword/karma-launcher)
-        browsers: ['ChromeHeadless', /*'ChromiumHeadless', 'FirefoxHeadless'*/],
+        browsers: [
+            // 'Chrome',
+            // 'Chromium',
+            // 'Firefox',
+            'ChromeHeadless',
+            // 'ChromiumHeadless',
+            // 'FirefoxHeadless',
+        ],
 
         // Exit after running the tests
         singleRun: true,
