@@ -19,11 +19,18 @@
 </template>
 
 <script>
-    export default {
-        name: 'App',
-        components: {
+export default {
+    name: 'App',
+
+    components: {
+    },
+
+    methods: {
+        answer() {
+            return 42
         },
-    }
+    },
+}
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 {
   "name": "vuejs-boilerplate",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Opinionated boilerplate for Vue.js web apps and Electron apps",
   "author": "F. Kasper <fkasper@modus-operandi.at>",
   "private": true,
@@ -59,7 +59,7 @@
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "karma-sourcemap-loader": "^0.3.8",
-    "karma-webpack": "^5.0.0",
+    "karma-webpack": "^4.0.2",
     "mocha": "^8.3.2",
     "rimraf": "^3.0.2",
     "serve": "^11.3.2",
