@@ -12,18 +12,19 @@ import MdModalDialog from 'vue-material-modal-dialog'
 import MdVuelidated from '@undecaf/vue-material-vuelidate'
 import autofocus from '@undecaf/vue-autofocus'
 import hotkey from '@undecaf/vue-hotkey'
-import store from '@/models/store'
+import storeConfig from '@/models/store'
 import routes from '@/routes'
 
 
 // Except for main.js, modules requiring Vue should import { Vue } from '@/config.js'
 // so that unit tests and regular runtime have the same configuration
-export let Vue
+export let Vue, router, store, i18n
 
 export default function options(vueClass) {
     Vue = vueClass
 
     vueClass.config.productionTip = false
+    vueClass.config.devtools = false
 
     vueClass.$logger = vueClass.prototype.$logger = new Logger({
         // See https://github.com/felixpy/logger#logger
@@ -52,9 +53,13 @@ export default function options(vueClass) {
 
     const locale = vueClass.material.selectLocale(navigator.language, 'en')
 
+    router = new VueRouter({ routes })
+    store = new Vuex.Store(storeConfig)
+    i18n = new VueI18n({ locale, messages })
+
     return {
-        router: new VueRouter({ routes }),
-        store: new Vuex.Store(store),
-        i18n: new VueI18n({ locale, messages }),
+        router,
+        store,
+        i18n,
     }
 }
