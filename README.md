@@ -1,8 +1,8 @@
-# Opinionated boilerplate for Vue.js web apps and Electron apps
+# Opinionated boilerplate for Vue.js web and Electron apps
 
 ## Runtime environment
 
-+   [Vue.js](https://vuejs.org/v2/api/), configured for:
++   [Vue.js](https://vuejs.org/v2/api/) configured for:
     +   source debugging in browser devtools with the same webpack path as in
         the project
 +   [Vue Router](https://router.vuejs.org/), the official Vue.js router
@@ -32,7 +32,7 @@
 +   [Karma](https://karma-runner.github.io/latest/index.html),
     [Mocha](https://mochajs.org/) and
     [Chai](https://www.chaijs.com/) for unit testing with headless Chrome 
-    and Firefox (or any other browser for which there is a Karma launcher)
+    and Firefox (or with any other browser for which there is a Karma launcher)
     
     Please note: we do not favour using [Jest](https://jestjs.io/) 
     as [recommended by Vue](https://vue-test-utils.vuejs.org/installation/#using-vue-test-utils-with-jest-recommended)
@@ -169,7 +169,7 @@ npm run electron:serve  # in Webstorm: run 'electron:serve'
 
 #### Unit tests
 
-Use `tests/unit/App.spec.js` as a template for your unit tests. Test files _must_ be named
+Use `tests/unit/*.spec.js` as templates for your unit tests. Test files _must_ be named
 `*.spec.js`.
 
 By default, unit tests run headless in Chrome. Edit the `browsers` property in `karma.conf.js`
@@ -184,19 +184,19 @@ npm run test:unit  # in Webstorm: run 'test:unit'
 
 #### End-to-end tests
 
-Use `tests/e2e/App.test.js` as a template for your E2E tests. Test files _must_ be named
+Use `tests/e2e/*.test.js` as templates for your E2E tests. Test files _must_ be named
 `*.test.js`.
 
-By default, unit tests run against Chrome. Edit the `browsers` property in `.testcaferc.json`
+By default, E2E tests run against Chrome. Edit the `browsers` property in `.testcaferc.json`
 to select a different browser or multiple browsers.
 
-Start the development server before running the E2E tests:
+Before running the E2E tests, the development server must be started:
 
 ```shell script
 npm run serve  # in Webstorm: run 'serve' 
 ```
 
-Then run the E2E tests in a second terminal:
+Then run the E2E tests in a different terminal:
 
 ```shell script
 npm run test:e2e  # in Webstorm: run 'test:e2e' 
@@ -234,11 +234,10 @@ npm run serve:dist -- -l 12345
 
 #### Building a desktop application
 
-The project can be built as an Electron-based desktop application can be built
+The project can be built as an Electron-based desktop application 
 for the current platform (Linux, Windows or macOS).
 
-This builds the project as a desktop application for the current platform
-in directory `dist_electron`:
+This builds the project for the current platform in directory `dist_electron`:
 
 ```shell script
 npm run electron:build  # in Webstorm: run 'electron:build' 
@@ -247,7 +246,7 @@ npm run electron:build  # in Webstorm: run 'electron:build'
 
 #### End-to-end tests
 
-Prepare E2E tests [as descibed above](#end-to-end-tests).
+Prepare E2E tests [as described above](#end-to-end-tests).
 
 Start a local server before running the E2E tests:
 
