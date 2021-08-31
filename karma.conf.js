@@ -56,8 +56,8 @@ module.exports = function(config) {
             // 'Chrome',
             // 'Chromium',
             // 'Firefox',
-            'ChromeHeadless',
-            // 'ChromiumHeadless',
+            // 'ChromeHeadless',
+            'ChromiumHeadless',
             // 'FirefoxHeadless',
         ],
 

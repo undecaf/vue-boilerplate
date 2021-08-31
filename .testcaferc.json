@@ -1,6 +1,6 @@
 {
   "src": "tests/e2e/**/*.test.js",
-  "browsers": [ "chrome" ],
+  "browsers": [ "chromium" ],
   "speed": 1,
   "screenshots": {
     "path": "screenshots/",
