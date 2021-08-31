@@ -1,4 +1,4 @@
-# Opinionated boilerplate for Vue.js web and Electron apps
+# Opinionated boilerplate for Vue.js web apps, PWAs and Electron apps
 
 ## Runtime environment
 
@@ -153,6 +153,13 @@ Listening at a different port:
 ```shell script
 npm run serve -- --port 12345
 ```
+
+
+#### Building your web application as a PWA (progressive web app)
+
+In `package.json`, copy the content of `comments.devDependencies-pwa` to `devDependencies`.
+Subsequent [development](#building-and-serving-a-web-application) and 
+[production](#building-a-web-application-for-deployment) builds will produce PWA versions of your web application.
 
 
 #### Building and running a desktop application
