@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import options from '@/config'
-import App from '@/components/App.vue'
+import TestComponent from './TestComponent'
 import '@/main.css'
 import { mount } from '@vue/test-utils'
 
@@ -10,11 +10,11 @@ const config = options(Vue)
 /**
  * Tests component methods and component UI
  */
-describe('<app> component', () => {
+describe('Vue component', () => {
     let wrapper
 
     beforeEach(() => {
-        wrapper = mount(App, config)
+        wrapper = mount(TestComponent, config)
     })
 
 
