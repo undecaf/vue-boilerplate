@@ -1,6 +1,6 @@
 {
   "name": "vuejs-boilerplate",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": true,
   "description": "Opinionated boilerplate for Vue.js web apps, PWAs and Electron apps",
   "keywords": [
@@ -33,6 +33,7 @@
     "prebuild": "rimraf dist/",
     "serve:dist": "serve -l 8080 ./dist",
     "test:unit:debug": "karma start --browsers Chrome --no-single-run",
+    "npm:audit": "npm audit --production",
     "npx:npm-check-updates": "npx npm-check-updates --target minor"
   },
   "main": "main.js",
@@ -42,7 +43,7 @@
     "@undecaf/vue-hotkey": "^0.1.6",
     "@undecaf/vue-material-locales": "^0.2.1",
     "@undecaf/vue-material-vuelidate": "^0.3.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^3.16.4",
     "date-fns": "^2.23.0",
     "material-icons-font": "^2.1.0",
@@ -57,13 +58,13 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@vue/cli": "^4.5.13",
-    "@vue/cli-plugin-router": "^4.5.13",
-    "@vue/cli-service": "~4.5.13",
+    "@vue/cli": "^4.5.15",
+    "@vue/cli-plugin-router": "^4.5.15",
+    "@vue/cli-service": "~4.5.15",
     "@vue/test-utils": "^1.2.2",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
-    "electron": "^14.0.0",
+    "electron": "^15.3.1",
     "electron-devtools-installer": "^3.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-html": "^6.1.2",
@@ -81,7 +82,7 @@
     "rimraf": "^3.0.2",
     "serve": "^12.0.0",
     "source-map-loader": "^1.1.3",
-    "testcafe": "^1.15.3",
+    "testcafe": "^1.17.1",
     "vue-cli-plugin-electron-builder": "^2.1.1",
     "vue-template-compiler": "^2.6.14"
   },
