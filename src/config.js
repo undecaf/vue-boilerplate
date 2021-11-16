@@ -12,7 +12,7 @@ import MdModalDialog from 'vue-material-modal-dialog'
 import MdVuelidated from '@undecaf/vue-material-vuelidate'
 import autofocus from '@undecaf/vue-autofocus'
 import hotkey from '@undecaf/vue-hotkey'
-import storeConfig from '@/models/store'
+import storeConfig from '@/services/store'
 import routes from '@/routes'
 
 
