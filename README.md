@@ -15,8 +15,9 @@
     [vue-material-modal-dialog](https://www.npmjs.com/package/vue-material-modal-dialog)
     +   [Locales for the Vue Material datepicker](https://www.npmjs.com/package/@undecaf/vue-material-locales)
 +   [Vuelidate](https://vuelidate.js.org/) plus
-    +   [vue-material-vuelidate](https://www.npmjs.com/package/vue-material-vuelidate),
+    + [vue-material-vuelidate](https://www.npmjs.com/package/@undecaf/vue-material-vuelidate),
         a validating wrapper for Vue Material input components
++   [Vue I18n](https://kazupon.github.io/vue-i18n/), an internationalization plugin for Vue.js
 +   The [axios](https://github.com/axios/axios#axios) HTTP client
 +   Additional directives:
     +   [@undecaf/vue-autofocus](https://www.npmjs.com/package/@undecaf/vue-autofocus)
@@ -109,38 +110,45 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
 
 #### Defining components
 
-Save your components in directory `src/components`.
+Save your Vue components in directory `src/components`.
 
 
 #### Defining routes
 
 [Vue Router](https://router.vuejs.org/) is used for navigation.
 Define components for each state and add the routes to the array in `src/routes.js`.
+To reference the router instance from outside a Vue component, use
+`import { router } from '@/config'`.
 
 
 #### Using the Vuex store
 
 This project uses [Vuex](https://vuex.vuejs.org/) for state management.
 Define state and mutations in the respective properties in `src/models/store.js`.
+To reference the store instance from outside a Vue component, use 
+`import { store } from '@/config'`.
 
 
 #### Validating Vue Material inputs
 
 Validations rely on [Vuelidate](https://vuelidate.js.org/). A wrapper component,
 [`<md-vuelidated>`](https://www.npmjs.com/package/vue-material-vuelidate),
-has been included to simplify writing Vuelidate validations.
+has been included to simplify writing Vuelidate validations. Documentation and examples
+[can be found here](https://www.npmjs.com/package/@undecaf/vue-material-vuelidate).
 
 
 #### Providing I18N and L10N
 
 Define localized text in `src/messages.json` and refer to it in your components as
-described in the [Vue18N Guide](https://kazupon.github.io/vue-i18n/guide/formatting.html).
+described in the [VueI18N Guide](https://kazupon.github.io/vue-i18n/guide/formatting.html).
+To reference the VueI18N instance from outside a Vue component, use
+`import { i18n } from '@/config'`.
 
 
 #### Building and serving a web application
 
 The development server rebuilds the project whenever something in directory `src`
-has been changed.
+has changed.
  
 Starting the server and listening at the default port (8080):
 
@@ -157,15 +165,17 @@ npm run serve -- --port 12345
 
 #### Building your web application as a PWA (progressive web app)
 
-In `package.json`, copy the content of `comments.devDependencies-pwa` to `devDependencies`.
+In `package.json`, copy the content of `comments.devDependencies-pwa` to `devDependencies`
+and run `npm install`.
 Subsequent [development](#building-and-serving-a-web-application) and 
 [production](#building-a-web-application-for-deployment) builds will produce PWA versions of your web application.
 
 
 #### Building and running a desktop application
 
+Desktop applications are based on the [Electron framework](https://www.electronjs.org/).
 The development server rebuilds the project whenever something in directory `src`
-has been changed.
+has changed.
 
 Starting the server and running the desktop app:
 
