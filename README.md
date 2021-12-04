@@ -58,51 +58,53 @@ git clone https://github.com/undecaf/vue-boilerplate.git <project directory>
 
 ```
 <project directory>
-  ├── .run                 // Webstorm run configurations for npm scripts
+  ├── .run                     // Webstorm run configurations for npm scripts
   |    └── *.run.xml
-  ├── build                // desktop app resources
+  ├── build                    // desktop app resources
   |    └── icons
-  |         └── icon.png   // launcher and tray icon, at least 256x256 pixels
-  ├── dist                 // production build of web app, built by 'npm build'
+  |         └── icon.png       // launcher and tray icon, at least 256x256 pixels
+  ├── dist                     // production build of web app, built by 'npm build'
   |    ├── css
   |    ├── fonts
   |    ├── js
   |    ├── favicon.png
   |    └── index.html
-  ├── dist_electron        // Electron builds of desktop app, built by 'npm electron:build'
+  ├── dist_electron            // Electron builds of desktop app, built by 'npm electron:build'
   |    └── ...
-  ├── node_modules         // dependencies
+  ├── node_modules             // dependencies
   |    └── ...
-  ├── public               // template files for web apps (HtmlWebpackPlugin)
+  ├── public                   // template files for web apps (HtmlWebpackPlugin)
   |    ├── favicon.png
   |    └── index.html
   ├── src
-  |    ├── components      // Vue components
+  |    ├── components          // Vue components
   |    |    └── *.vue
-  |    ├── models          // Vuex data store and data model classes
-  |    |    ├── store.js
+  |    ├── models              // entity classes
   |    |    └── *.js
-  |    ├── background.js   // app configuration, also used for testing
-  |    ├── config.js       // app configuration, also used for testing
-  |    ├── main.css        // global styles
-  |    ├── main.js         // app entry point
-  |    ├── messages.json   // localized VueI18N messages
-  |    └── routes.js       // routes for Vue Router
+  |    ├── services            // global services
+  |    |    ├── event-bus.js   // event bus 
+  |    |    ├── store.js       // Vuex store
+  |    |    └── *.js
+  |    ├── config.js           // app configuration, also used for testing
+  |    ├── main.css            // global styles
+  |    ├── main.js             // app entry point
+  |    ├── messages.json       // localized Vue I18n messages
+  |    └── routes.js           // routes for Vue Router
   ├── tests
-  |    ├── e2e             // end-to-end test suites for Testcafé
+  |    ├── e2e                 // end-to-end test suites for Testcafé
   |    |    └── *.test.js
-  |    └── unit            // unit test suites for Mocha/Chai
+  |    └── unit                // unit test suites for Mocha/Chai
   |         └── *.spec.js
-  ├── .eslintrc.js         // ESLint configuration
+  ├── .eslintrc.js             // ESLint configuration
   ├── .gitignore 
-  ├── .jshintrc            // JSHint configuration 
-  ├── .testcaferc.json     // Testcafé end-to-end test configuration
-  ├── karma.conf.js        // Karma unit test configuration
+  ├── .jshintrc                // JSHint configuration 
+  ├── .testcaferc.json         // Testcafé end-to-end test configuration
+  ├── karma.conf.js            // Karma unit test configuration
   ├── LICENSE
   ├── package.json
   ├── package-lock.json
-  ├── README.md            // this file
-  └── vue.config.js        // Vue and Webpack build configuration
+  ├── README.md                // this file
+  └── vue.config.js            // Vue and Webpack build configuration
 ```
 
 
