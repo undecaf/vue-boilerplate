@@ -1,3 +1,5 @@
+## :warning: This project is no longer being maintained
+
 # Opinionated boilerplate for Vue.js web apps, PWAs and Electron apps
 
 ## Runtime environment
