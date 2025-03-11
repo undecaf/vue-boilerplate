@@ -1,4 +1,4 @@
-## :warning: This project is no longer being maintained
+## :warning: This repository is no longer being maintained and has been archived.
 
 # Opinionated boilerplate for Vue.js web apps, PWAs and Electron apps
 
